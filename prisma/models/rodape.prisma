@@ -1,0 +1,12 @@
+model Rodape {
+  id               String        @id @default(uuid())
+  nomeEmpresa      String
+  descricao        String
+  direitosAutorais String
+  ativo            Boolean       @default(true)
+  secoes           SecaoRodape[]
+  criadoEm         DateTime      @default(now())
+  atualizadoEm     DateTime      @updatedAt
+
+  @@map("rodapes")
+}

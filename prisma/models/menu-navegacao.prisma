@@ -1,0 +1,13 @@
+model MenuNavegacao {
+  id           String     @id @default(uuid())
+  titulo       String
+  slug         String     @unique
+  url          String?
+  ordem        Int        @default(0)
+  ativo        Boolean    @default(true)
+  itens        ItemMenu[]
+  criadoEm     DateTime   @default(now())
+  atualizadoEm DateTime   @updatedAt
+
+  @@map("menus_navegacao")
+}

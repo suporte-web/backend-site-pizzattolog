@@ -1,0 +1,15 @@
+model ItemMenu {
+  id           String        @id @default(uuid())
+  titulo       String
+  slug         String
+  url          String?
+  ordem        Int           @default(0)
+  ativo        Boolean       @default(true)
+  menuId       String
+  menu         MenuNavegacao @relation(fields: [menuId], references: [id], onDelete: Cascade)
+  criadoEm     DateTime      @default(now())
+  atualizadoEm DateTime      @updatedAt
+
+  @@unique([menuId, slug])
+  @@map("itens_menu")
+}

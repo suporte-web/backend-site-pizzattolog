@@ -1,0 +1,16 @@
+model HeroPaginaInicial {
+  id                   String   @id @default(uuid())
+  etiqueta             String
+  titulo               String
+  descricao            String
+  imagemUrl            String?  @default("/images/home/caminhao-tela-inicial.png")
+  textoBotaoPrimario   String
+  urlBotaoPrimario     String?
+  textoBotaoSecundario String
+  urlBotaoSecundario   String?
+  ativo                Boolean  @default(true)
+  criadoEm             DateTime @default(now())
+  atualizadoEm         DateTime @updatedAt
+
+  @@map("heroes_pagina_inicial")
+}

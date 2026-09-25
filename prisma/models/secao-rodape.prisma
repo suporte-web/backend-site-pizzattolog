@@ -1,0 +1,13 @@
+model SecaoRodape {
+  id           String       @id @default(uuid())
+  titulo       String
+  ordem        Int          @default(0)
+  ativo        Boolean      @default(true)
+  rodapeId     String
+  rodape       Rodape       @relation(fields: [rodapeId], references: [id], onDelete: Cascade)
+  links        LinkRodape[]
+  criadoEm     DateTime     @default(now())
+  atualizadoEm DateTime     @updatedAt
+
+  @@map("secoes_rodape")
+}

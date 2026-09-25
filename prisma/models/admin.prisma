@@ -1,0 +1,56 @@
+model UsuarioAdmin {
+  id            String              @id @default(uuid())
+  nome          String
+  email         String              @unique
+  senhaHash     String
+  perfil        PerfilUsuarioAdmin
+  ativo         Boolean             @default(true)
+  ultimoLoginEm DateTime?
+  criadoEm      DateTime            @default(now())
+  atualizadoEm  DateTime            @updatedAt
+  logsAuditoria LogAuditoria[]
+
+  @@map("usuarios_admin")
+}
+
+model ConteudoEditavel {
+  id           String   @id @default(uuid())
+  chave        String   @unique
+  pagina       String
+  rotulo       String
+  titulo       String?
+  texto        String?
+  imagemUrl    String?
+  ativo        Boolean  @default(true)
+  criadoEm     DateTime @default(now())
+  atualizadoEm DateTime @updatedAt
+
+  @@map("conteudos_editaveis")
+}
+
+model LogAuditoria {
+  id           String              @id @default(uuid())
+  usuarioId    String?
+  usuarioEmail String?
+  perfil       PerfilUsuarioAdmin?
+  acao         String
+  entidade     String
+  entidadeId   String?
+  descricao    String?
+  dadosAntes   Json?
+  dadosDepois  Json?
+  ip           String?
+  userAgent    String?
+  criadoEm     DateTime            @default(now())
+  usuario      UsuarioAdmin?       @relation(fields: [usuarioId], references: [id], onDelete: SetNull)
+
+  @@index([usuarioId])
+  @@index([entidade, entidadeId])
+  @@index([criadoEm])
+  @@map("logs_auditoria")
+}
+
+enum PerfilUsuarioAdmin {
+  ADMIN
+  MARKETING
+}
