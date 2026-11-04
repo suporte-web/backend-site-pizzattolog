@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { PrismaService } from '../../prisma/prisma.service';
-import { menusPadrao } from '../menus/menus-padrao';
-import { subpaginasPadrao } from '../subpaginas/subpaginas-padrao';
+import { PrismaService } from '../../database/prisma.service';
+import { menusPadrao } from '../menus/data/menus-padrao';
+import { subpaginasPadrao } from '../subpaginas/data/subpaginas-padrao';
 
 @Injectable()
 export class SiteService {

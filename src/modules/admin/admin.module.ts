@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { PrismaModule } from '../../prisma/prisma.module';
+import { PrismaModule } from '../../database/prisma.module';
 import { AuditoriaController } from './controllers/auditoria.controller';
 import { AutenticacaoAdminController } from './controllers/autenticacao-admin.controller';
 import { ConteudosMarketingController } from './controllers/conteudos-marketing.controller';

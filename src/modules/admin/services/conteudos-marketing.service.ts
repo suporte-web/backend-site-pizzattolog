@@ -1,6 +1,6 @@
 import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common';
 import { Request } from 'express';
-import { PrismaService } from '../../../prisma/prisma.service';
+import { PrismaService } from '../../../database/prisma.service';
 import { AtualizarConteudoEditavelDto } from '../dto/atualizar-conteudo-editavel.dto';
 import { AtualizarHeroAdminDto } from '../dto/atualizar-hero-admin.dto';
 import { CriarHeroDto } from '../../hero/dto/criar-hero.dto';

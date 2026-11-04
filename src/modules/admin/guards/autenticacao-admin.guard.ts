@@ -4,7 +4,7 @@ import {
   Injectable,
   UnauthorizedException,
 } from '@nestjs/common';
-import { PrismaService } from '../../../prisma/prisma.service';
+import { PrismaService } from '../../../database/prisma.service';
 import { RequisicaoAdmin } from '../decorators/usuario-atual.decorator';
 import { TokenAdminService } from '../services/token-admin.service';
 

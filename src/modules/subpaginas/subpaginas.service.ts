@@ -4,9 +4,9 @@ import {
   NotFoundException,
 } from '@nestjs/common';
 import { Prisma } from '../../generated/prisma/client';
-import { PrismaService } from '../../prisma/prisma.service';
+import { PrismaService } from '../../database/prisma.service';
 import { CriarSubpaginaDto } from './dto/criar-subpagina.dto';
-import { subpaginasPadrao } from './subpaginas-padrao';
+import { subpaginasPadrao } from './data/subpaginas-padrao';
 
 @Injectable()
 export class SubpaginasService {

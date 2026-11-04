@@ -6,7 +6,7 @@ import {
 } from '@nestjs/common';
 import { Request } from 'express';
 import { Prisma } from '../../../generated/prisma/client';
-import { PrismaService } from '../../../prisma/prisma.service';
+import { PrismaService } from '../../../database/prisma.service';
 import { CriarPaginaDto } from '../../paginas/dto/criar-pagina.dto';
 import { AtualizarPaginaAdminDto } from '../dto/atualizar-pagina-admin.dto';
 import { UsuarioAdminAutenticado } from '../types/usuario-admin-autenticado';

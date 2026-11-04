@@ -4,7 +4,7 @@ import {
   UnauthorizedException,
 } from '@nestjs/common';
 import { Request } from 'express';
-import { PrismaService } from '../../../prisma/prisma.service';
+import { PrismaService } from '../../../database/prisma.service';
 import { CriarPrimeiroAcessoDto } from '../dto/criar-primeiro-acesso.dto';
 import { LoginAdminDto } from '../dto/login-admin.dto';
 import { CriptografiaSenhaService } from './criptografia-senha.service';

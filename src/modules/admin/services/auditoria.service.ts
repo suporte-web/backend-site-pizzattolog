@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { Request } from 'express';
-import { PrismaService } from '../../../prisma/prisma.service';
+import { PrismaService } from '../../../database/prisma.service';
 import { UsuarioAdminAutenticado } from '../types/usuario-admin-autenticado';
 
 interface RegistrarAuditoriaParams {
